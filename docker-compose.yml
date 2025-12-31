@@ -51,7 +51,23 @@ services:
     ports:
       - "5004:5000"
 
-
+# =========================
+# NGINX API Gateway
+# =========================
+  nginx:
+    image: nginx:latest
+    container_name: nginx_gateway
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "8080:80"
+    networks:
+      - backend
+    depends_on:
+      - user-service-1
+      - user-service-2
+      - orders-service-1
+      - orders-service-2
 # =========================
 # Network interna
 # =========================
