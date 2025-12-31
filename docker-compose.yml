@@ -1,0 +1,60 @@
+version: '3.9'
+
+services:
+  # =========================
+  # User Service
+  # =========================
+  user-service-1:
+    build: ./user-service
+    container_name: user-service-1
+    environment:
+      - SERVICE_NAME=user-service
+      - INSTANCE_ID=user-service-1
+    networks:
+      - backend
+    ports:
+      - "5001:5000"
+
+  user-service-2:
+    build: ./user-service
+    container_name: user-service-2
+    environment:
+      - SERVICE_NAME=user-service
+      - INSTANCE_ID=user-service-2
+    networks:
+      - backend
+    ports:
+      - "5002:5000"
+
+  # =========================
+  # Orders Service
+  # =========================
+  orders-service-1:
+    build: ./order-service
+    container_name: orders-service-1
+    environment:
+      - SERVICE_NAME=orders-service
+      - INSTANCE_ID=orders-service-1
+    networks:
+      - backend
+    ports:
+      - "5003:5000"
+
+  orders-service-2:
+    build: ./order-service
+    container_name: orders-service-2
+    environment:
+      - SERVICE_NAME=orders-service
+      - INSTANCE_ID=orders-service-2
+    networks:
+      - backend
+    ports:
+      - "5004:5000"
+
+
+# =========================
+# Network interna
+# =========================
+networks:
+  backend:
+    driver: bridge
