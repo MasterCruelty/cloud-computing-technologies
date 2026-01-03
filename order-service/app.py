@@ -24,7 +24,7 @@ def orders():
    
 @app.route("/health", methods=["GET"])
 def health():
-    return {"status": "UP", "service": SERVICE_NAME}, 200
+    return {"status": "UP", "service": SERVICE_NAME,"instance": INSTANCE_ID}, 200
 
 
 if __name__ == "__main__":
