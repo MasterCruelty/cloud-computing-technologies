@@ -14,8 +14,6 @@ services:
       - backend
     expose:
       - "5000"
-    #ports:
-    #  - "5001:5000"
 
   user-service-2:
     build: ./user-service
@@ -27,8 +25,6 @@ services:
       - backend
     expose:
       - "5000"
-    #ports:
-    #  - "5002:5000"
 
   # =========================
   # Orders Service
@@ -41,8 +37,8 @@ services:
       - INSTANCE_ID=orders-service-1
     networks:
       - backend
-    ports:
-      - "5003:5000"
+    expose:
+      - "5000"
 
   orders-service-2:
     build: ./order-service
@@ -54,8 +50,6 @@ services:
       - backend
     expose:
       - "5000"
-    #ports:
-    #  - "5004:5000"
 
   health-check:
     build: ./health-check
