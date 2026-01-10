@@ -35,6 +35,8 @@ services:
     environment:
       - SERVICE_NAME=orders-service
       - INSTANCE_ID=orders-service-1
+    volumes:
+      - orders-data:/data
     networks:
       - backend
     expose:
@@ -46,11 +48,13 @@ services:
     environment:
       - SERVICE_NAME=orders-service
       - INSTANCE_ID=orders-service-2
+    volumes:
+      - orders-data:/data
     networks:
       - backend
     expose:
       - "5000"
-
+      
   health-check:
     build: ./health-check
     depends_on:
@@ -58,7 +62,6 @@ services:
       - orders-service-1
     networks:
       - backend
-
 
 # =========================
 # NGINX API Gateway
@@ -83,3 +86,6 @@ services:
 networks:
   backend:
     driver: bridge
+    
+volumes:
+  orders-data:
