@@ -29,4 +29,4 @@ while True:
 
     print(json.dumps(status, indent=4), flush=True)
     print(datetime.now())
-    time.sleep(10)  # ogni 5 secondi ripete il check
+    time.sleep(10)  # ogni 10 secondi ripete il check
