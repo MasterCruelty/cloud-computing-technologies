@@ -10,6 +10,8 @@ services:
     environment:
       - SERVICE_NAME=user-service
       - INSTANCE_ID=user-service-1
+    volumes:
+      - users-data:/data
     networks:
       - backend
     expose:
@@ -21,6 +23,8 @@ services:
     environment:
       - SERVICE_NAME=user-service
       - INSTANCE_ID=user-service-2
+    volumes:
+      - users-data:/data
     networks:
       - backend
     expose:
@@ -89,3 +93,4 @@ networks:
     
 volumes:
   orders-data:
+  users-data:
