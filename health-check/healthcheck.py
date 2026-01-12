@@ -3,6 +3,7 @@ import time
 import json
 from datetime import datetime
 
+# rotte interne microservizi su /health
 services = {
     "user-service": [
         "http://user-service-1:5000/health",
@@ -14,6 +15,7 @@ services = {
     ]
 }
 
+#ciclo infinito che ogni 10 secondi effettua richieste verso endpoint interno /health su tutte le istanze.
 while True:
     status = {}
 
