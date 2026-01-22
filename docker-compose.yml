@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   # =========================
-  # User Service
+  # Istanze del servizio users
   # =========================
   user-service-1:
     build: ./user-service
@@ -31,7 +31,7 @@ services:
       - "5000"
 
   # =========================
-  # Orders Service
+  # istanze del servizio orders
   # =========================
   orders-service-1:
     build: ./order-service
