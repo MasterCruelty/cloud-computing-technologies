@@ -58,9 +58,12 @@ services:
       - backend
     expose:
       - "5000"
-      
+  # =========================
+  # istanza servizio monitoraggio stato istanze
+  # =========================   
   health-check:
     build: ./health-check
+    container_name: health-check
     depends_on:
       - user-service-1
       - orders-service-1
