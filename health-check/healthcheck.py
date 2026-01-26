@@ -15,7 +15,7 @@ services = {
     ]
 }
 
-#ciclo infinito che ogni 10 secondi effettua richieste verso endpoint interno /health su tutte le istanze.
+#ciclo infinito che ogni 20 secondi effettua richieste verso endpoint interno /health su tutte le istanze.
 while True:
     status = {}
 
@@ -31,4 +31,4 @@ while True:
 
     print(json.dumps(status, indent=4), flush=True)
     print(datetime.now())
-    time.sleep(20)  # ogni 10 secondi ripete il check
+    time.sleep(20)  # ogni 20 secondi ripete il check
