@@ -29,7 +29,7 @@ services:
       - backend
     expose:
       - "5000"
-
+      
   # =========================
   # istanze del servizio orders
   # =========================
@@ -58,6 +58,7 @@ services:
       - backend
     expose:
       - "5000"
+
   # =========================
   # istanza servizio monitoraggio stato istanze
   # =========================   
