@@ -87,6 +87,7 @@ services:
       - user-service-2
       - orders-service-1
       - orders-service-2
+
 # =========================
 # Network interna
 # =========================
@@ -97,7 +98,6 @@ networks:
 # =========================
 # Volumi
 # =========================
-
 volumes:
   orders-data:
   users-data:
